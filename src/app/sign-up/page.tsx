@@ -17,6 +17,8 @@ import { Input } from '@/components/ui/input';
 import { Card, CardHeader, CardTitle } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 import { SwitchTheme } from '@/components/switchTheme';
+import Link from 'next/link';
+import Image from 'next/image';
 
 const cpfRegex = /^(\d{3}\.\d{3}\.\d{3}-\d{2}|\d{11})$/;
 const formSchema = z.object({
@@ -43,13 +45,12 @@ export default function SignUp() {
   }
 
   return (
-    <div className="w-screen h-screen flex flex-col justify-center gap-4">
-      <div className="small-mobile:w-[90vw] mobile:w-[85vw] w-2/3 desktop:w-2/5 self-center flex ">
-        <SwitchTheme />
-      </div>
-
-      <main className="flex justify-center">
-        <Card className="small-mobile:w-[90vw] mobile:w-[85vw] w-2/3 desktop:w-2/5 p-10 flex flex-col">
+    <div className="w-screen h-screen justify-center flex items-center">
+      <main className=" lg:w-1/2 px-5">
+        <Card className="mobile:w-[90vw] xs:w-[90vw] sm:w-[85vw] md:w-[85vw] w-2/3 lg:w-full lg:h-full p-10 flex flex-col justify-center ">
+          <div className="flex">
+            <SwitchTheme />
+          </div>
           <CardHeader className="text-center">
             <CardTitle>Criar Conta</CardTitle>
           </CardHeader>
@@ -129,7 +130,7 @@ export default function SignUp() {
               />
 
               <Separator className="my-3" />
-              <div className="flex flex-col gap-2">
+              <div className="flex gap-2 justify-center">
                 <Button
                   type="submit"
                   className="text-center hover:opacity-90 transition duration-300 text-lg"
@@ -147,8 +148,25 @@ export default function SignUp() {
               </div>
             </form>
           </Form>
+          <p className="mt-4 text-center text-sm">
+            Já tem conta? Faça{' '}
+            <Link
+              href="/"
+              className="underline"
+            >
+              login
+            </Link>
+          </p>
         </Card>
       </main>
+
+      <Image
+        src="/placeholder.svg"
+        className="lg:block hidden w-1/2 h-full bg-red-600"
+        width="1920"
+        height="1080"
+        alt="app logo"
+      />
     </div>
   );
 }
