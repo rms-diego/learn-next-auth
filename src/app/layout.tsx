@@ -9,13 +9,19 @@ export const metadata: Metadata = { title: 'Login next auth and shadcn ui' };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="pt-BR">
-      <ThemeProvider
-        attribute="class"
-        defaultTheme="system"
-      >
-        <body className={inter.className}>{children}</body>
-      </ThemeProvider>
+    <html
+      lang="pt-BR"
+      suppressHydrationWarning
+    >
+      <head />
+      <body className={inter.className}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+        >
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
