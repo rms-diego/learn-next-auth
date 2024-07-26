@@ -9,9 +9,11 @@ const config = {
   prefix: '',
   theme: {
     screens: {
-      'small-mobile': '480px',
-      mobile: '768px',
-      desktop: '1024px',
+      mobile: { max: '575px' },
+      xs: '575px',
+      sm: '639px',
+      md: '767px',
+      lg: '1023px',
     },
     container: {
       center: true,
