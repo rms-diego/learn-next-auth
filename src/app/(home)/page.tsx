@@ -34,9 +34,10 @@ export default function Login() {
     },
   });
 
-  function onSubmit() {
+  async function onSubmit() {
     const { email, password } = form.getValues();
-    console.log({ email, password });
+
+    console.log(form.getValues());
   }
 
   return (
@@ -96,7 +97,7 @@ export default function Login() {
                   type="submit"
                   className="text-center hover:opacity-90 transition duration-300 text-lg"
                 >
-                  Criar conta
+                  Login
                 </Button>
 
                 <Button
