@@ -124,7 +124,7 @@ export default function Login() {
 
       <Image
         src="/placeholder.svg"
-        className="lg:block hidden w-1/2 h-full bg-red-600 object-cover"
+        className="lg:block hidden w-1/2 h-full object-cover"
         width="1920"
         height="1080"
         alt="app logo"
